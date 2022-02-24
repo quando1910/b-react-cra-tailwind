@@ -16,7 +16,10 @@ const Highways = () => {
       const temp = roads.map(x => {
         const road = new Highway({ id: x });
         const item = favorite.find(y => y.id === road.id);
-        road.addInfo(item?.comment, item?.color);
+        if (item) {
+          road.isFavorite = true;
+          road.addInfo(item?.comment, item?.color);
+        }
         return road;
       });
       setHighways(temp);

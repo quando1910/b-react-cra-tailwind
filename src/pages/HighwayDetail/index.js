@@ -33,7 +33,7 @@ const HighwayDetail = () => {
 
   const toggleFavorite = () => {
     if (!currentFavorite) {
-      dispatch(addFavoriteHighway({ id }));
+      dispatch(addFavoriteHighway({ id, isFavorite: true }));
       notifyAdd();
     } else {
       dispatch(removeFavoriteHighway({ id }));
