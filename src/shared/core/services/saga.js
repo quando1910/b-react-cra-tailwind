@@ -1,4 +1,4 @@
-import { ApiService } from './api';
+import { ApiService, ErrorHandler } from './api';
 import qs from 'qs';
 
 function createURL(uri, query) {
@@ -29,7 +29,7 @@ export function* get(
     const res = yield apiService.makeRequest('GET', url, moreConfig);
     return res.data;
   } catch (e) {
-    // throw new ErrorHandler(e);
+    throw new ErrorHandler(e);
   }
 }
 
@@ -48,6 +48,6 @@ export function* post(
     const res = yield apiService.makeRequest('POST', url, config);
     return res.data;
   } catch (e) {
-    // throw new ErrorHandler(e);
+    throw new ErrorHandler(e);
   }
 }
