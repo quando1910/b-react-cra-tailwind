@@ -1,4 +1,4 @@
-# CRA Boilerplate with tailwind and saga
+# CRA Boilerplate with Tailwind and Redux Saga
 
 This is a boilerplate, combined with:
 - Reactjs
