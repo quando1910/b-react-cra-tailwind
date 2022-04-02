@@ -17,24 +17,8 @@ const addFavorite = (state, payload) => {
   }
 };
 
-const removeFavorite = (state, payload) => ({
-  ...state,
-  favorites: state.favorites.filter(x => x.id !== payload.id),
-});
-
-const addInfoForFavorite = (state, payload) => {
-  const item = state.favorites.find(x => x.id === payload.id);
-  item.addInfo(payload.comment, payload.color);
-  return {
-    ...state,
-    favorites: [...state.favorites],
-  }
-};
-
 const favoriteStrategies = {
   ADD_FAVORITE: addFavorite,
-  REMOVE_FAVORITE: removeFavorite,
-  ADD_INFO_FOR_FAVORITE: addInfoForFavorite,
   __default__: (state) => state,
 };
 const favoriteController = createReducer(favoriteStrategies, {
