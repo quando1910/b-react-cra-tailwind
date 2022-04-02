@@ -1,4 +1,4 @@
-# Getting Started with Create React App
+# CRA Boilerplate with tailwind and saga
 
 This is a boilerplate, combined with:
 - Reactjs
