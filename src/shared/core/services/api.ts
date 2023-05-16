@@ -11,7 +11,7 @@ export class ErrorHandler {
   data;
   status;
 
-  constructor(e) {
+  constructor(e: any) {
     // Error request timeout
     if ((e.code && e.code === 'ECONNABORTED') || e?.response?.status === 408 ) {
       this.status = STATUS_CODE.REQUEST_TIMEOUT;
@@ -37,7 +37,7 @@ export class ErrorHandler {
       // handle error message sent from API
       this.status = e?.response?.status;
       this.data = {
-        errors: e?.response?.data?.errors?.map(x => {
+        errors: e?.response?.data?.errors?.map((x: any) => {
           let message = e?.response?.status;
           // For special cases
           if (
@@ -99,7 +99,7 @@ export class ApiService {
     );
   }
 
-  makeRequest(method, url, moreConfigs = {}) {
+  makeRequest(method: any, url: any, moreConfigs = {}): any {
     return this.axiosInstance({
       method,
       url,

@@ -1,6 +1,9 @@
-import { get } from 'shared/core/services/saga';
-import * as types from 'stores/types';
-import { all, takeLatest } from 'redux-saga/effects';
+// import { get } from 'shared/core/services/saga';
+// import * as types from 'stores/types';
+import { 
+  all, 
+  // takeLatest 
+} from 'redux-saga/effects';
 
 // function* getList({ resolve, reject }) {
 //   try {

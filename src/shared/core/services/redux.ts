@@ -1,9 +1,9 @@
 export const createReducer =
-  (strategies, initialState) =>
-    (state = initialState, { type, payload }) =>
+  (strategies: any, initialState: any) =>
+    (state = initialState, { type, payload }: any) =>
       (strategies[type] ?? strategies.__default__)(state, payload);
 
-export const generateAPIAction = (name) => {
+export const generateAPIAction = (name: any) => {
   return (
     payload = null,
     resolve = () => { },
@@ -30,21 +30,21 @@ export const initialAPIState = {
   error: null,
 };
 
-export const callingApi = (state) => ({
+export const callingApi = (state: any) => ({
   ...state,
   process: API_PROCESS.LOADING,
   data: null,
   error: null,
 });
 
-export const handleApiSuccess = (state, payload) => ({
+export const handleApiSuccess = (state: any, payload: any) => ({
   ...state,
   process: API_PROCESS.SUCESS,
   data: payload,
   error: null,
 });
 
-export const handleApiError = (state, payload) => ({
+export const handleApiError = (state: any, payload: any) => ({
   ...state,
   process: API_PROCESS.FAILED,
   data: null,
